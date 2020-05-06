@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+
+{%  block head %}
+<title> home </title>
+{% endblock %}
+
+
+{%  block body %}
+<br>
+<h1>home page</h1>
+<br>
+<main role="main">
+    <div class="jumbotron shadow-lg border border-dark p-5 bg-white panel panel-primary">
+        <div class="col-sm-8 mx-auto">
+            <h1>Welcome</h1>
+            <p>
+                This is just for fun. But you can post anything related to <a  href="https://www.google.com/search?q=computer+science">computer Science</a> here. or any Question if you want:)
+            </p>
+            <p>
+                <a class="btn btn-dark" href="/posts" role="button">Go To Blog Posts&raquo;</a>
+            </p>
+        </div>
+    </div>
+</main>
+{% endblock %}

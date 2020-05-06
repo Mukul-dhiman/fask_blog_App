@@ -1,0 +1,50 @@
+create table user(
+     name varchar(10000) NOT NULL,
+     id INT AUTO_INCREMENT PRIMARY KEY,
+     username varchar(100) NOT NULL,
+     email varchar(200) NOT NULL,
+    phone INT(1000000) );
+
+INSERT INTO user
+VALUES( 'name1',1, 'user_name1','user1@gmail.com',9876543210);
+INSERT INTO user
+VALUES( 'name2',2, 'user_name2','user2@gmail.com',2);
+INSERT INTO user
+VALUES( 'name3',3, 'user_name3','user3@gmail.com',3);
+INSERT INTO user
+VALUES( 'name4',4, 'user_name4','user4@gmail.com',4);
+INSERT INTO user
+VALUES( 'name5',5, 'user_name5','user5@gmail.com',5);
+INSERT INTO user
+VALUES( 'name6',6, 'user_name6','user6@gmail.com',6);
+INSERT INTO user
+VALUES( 'name7',7, 'user_name7','user7@gmail.com',7);
+
+create table all_products( owner_id INT,product_name varchar(100), est_price INT, product_id INT PRIMARY KEY AUTO_INCREMENT, average_rating INT, NO_OF_TIME INT, product_type varchar(100));
+
+create table buys( buyer_id INT, Product_id INT);
+
+alter table products add foreign key(product_id) references all_product(product_id);
+
+ create table products( user_id INT,product_id INT );
+
+ create table user(      name varchar(10000) NOT NULL,      user_id INT AUTO_INCREMENT PRIMARY KEY,      username varchar(100) NOT NULL,      email varchar(200) NOT NULL,     phone BIGINT );
+
+create table pending_payment( buyer_id INT, seller_id INT, decided_price INT,dedline INT);
+
+
+
+
+alter table buys add foreign key(product_id) references all_products(Product_id);
+
+ alter table buys add foreign key(buyer_id) references user(user_id);
+
+alter table all_products add foreign key(owner_id) references user(user_id);
+
+ alter table products add foreign key(user_id) references user(user_id);
+
+
+ alter table products add foreign key(product_id) references all_products(product_id);
+
+INSERT INTO programing_products
+VALUES( 1 ,product_name_1, 100, 0,4,10,'freestyle');

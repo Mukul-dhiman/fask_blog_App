@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+
+
+{%  block head %}
+<title> posts </title>
+{% endblock %}
+
+
+{%  block body %}
+
+<hr>
+<h2>Create New blog post:</h2>
+<div class="shadow-lg border border-dark p-5 bg-white panel panel-primary">
+    <form action='/posts' method='POST'>
+        <label for="title">Title:</label>
+        <input class="form-control" type='text' name='title' id='title' placeholder="Enter your Title"
+            aria-label="Enter your Title">
+        <br>
+        <label for="author">Author:</label>
+        <input class="form-control" type='text' name='author' id='author' placeholder="Enter your Name"
+            aria-label="Enter your Name">
+        <br>
+        <label for="content">post:</label>
+        <textarea class="form-control" type='text' name='content' id='content' placeholder="write your Post here"
+            aria-label="write your Post here" rows="3"></textarea>
+        <br>
+        <input class="btn btn-dark" type='submit' value='POST'>
+
+    </form>
+</div>
+<hr>
+
+{% endblock %}

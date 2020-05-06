@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+
+
+{%  block head %}
+<title> posts </title>
+{% endblock %}
+
+
+{%  block body %}
+<br>
+<div>
+    <h1 style="display:inline">All Posts</h1>
+    <a style="display:inline" class="btn btn-dark float-right" href='/posts/new'>Add New Post</a>
+</div>
+<hr>
+
+{% for post in posts %}
+<div class="shadow-lg border border-dark p-5 bg-white panel panel-primary">
+    <h2> {{ post.title }} </h2>
+    {% if post.author %}
+    <small>Written by {{post.author }} on {{post.date_posted}}</small>
+    {% else %}
+    <small>Written by unknown on {{post.date_posted}}</small>
+    {%endif%}
+    <br>
+    <p style="white-space:pre-wrap"> {{  post.content }} </p>
+
+    <a class="btn btn-dark" href='/posts/delete/{{post.id}}'>Delete</a>
+    <a class="btn btn-dark" href='/posts/edit/{{post.id}}'>Edit</a>
+</div>
+<br>
+{% endfor %}
+
+{% endblock %}
